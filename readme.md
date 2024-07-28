@@ -32,4 +32,6 @@ Installation of django is quite simple, you have two options to install it, the 
 
 - Your project should now be running on localhost:8000
 
+- It's possible that your port 8000 might already being used by some other application. In this case, you can run the  ``` py manage.py runserver port_number ``` Boom! that's it. You just need to add a port number to the previous command and you're ready to go.
+ 
 ### Enjoy!!!
