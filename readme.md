@@ -30,6 +30,6 @@ Installation of django is quite simple, you have two options to install it, the 
 
 - All you need to do now is to start your development server by running ``` py manage.py runserver ``` command on the terminal.
 
-- You project should now be running on localhost:8000
+- Your project should now be running on localhost:8000
 
 ### Enjoy!!!
