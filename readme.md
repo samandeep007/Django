@@ -33,5 +33,26 @@ Installation of django is quite simple, you have two options to install it, the 
 - Your project should now be running on localhost:8000
 
 - It's possible that your port 8000 might already being used by some other application. In this case, you can run the  ``` py manage.py runserver port_number ``` Boom! that's it. You just need to add a port number to the previous command and you're ready to go.
- 
-### Enjoy!!!
+
+#
+# Levels in Django
+
+## Project Level
+
+The project level in Django refers to the top-level directory that contains your entire Django project. It typically has the same name as your project and serves as the main entry point for your application.
+
+At the project level, you will find important files such as `settings.py`, which contains the configuration settings for your project, and `urls.py`, which defines the URL patterns for your project.
+
+## Root Level
+
+The root level in Django refers to the directory that contains your entire Django project, including any additional files or directories that are not part of the Django framework itself. This can include files such as READMEs, requirements.txt, or any other project-specific files.
+
+The root level is often the parent directory of the project level directory. It provides a convenient place to store project-related files that are not directly related to the Django framework.
+
+## App Level
+
+The app level in Django refers to individual applications within your Django project. Each app represents a specific functionality or feature of your project. For example, you might have separate apps for user authentication, blog posts, or product listings.
+
+At the app level, you will typically find files such as `models.py`, which defines the database models for the app, `views.py`, which contains the logic for handling HTTP requests, and `templates/`, which stores the HTML templates for rendering the app's views.
+
+By organizing your project into separate apps, you can achieve modularity and reusability, making it easier to maintain and extend your Django project.
