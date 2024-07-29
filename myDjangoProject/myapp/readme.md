@@ -71,7 +71,7 @@ If you are coming from javascript, you might have worked with react where you ca
    ```html
     <link rel='stylesheet' href="{% static 'style.css'%}">
     ```
-- You might want each page to have its own title, so what you can do is, add a unnamed block inside your title tag.
+- You might want each page to have its own title, so what you can do is, add a unnamed block inside your title tag. This block behaves like a placeholder
 
    ```html
     <title>
@@ -80,4 +80,36 @@ If you are coming from javascript, you might have worked with react where you ca
         {% endblock %}
     </title>
     ```
+- Similarly, you can add a block to the body as well under your navbar
+  ```html
+  <body>
+    <nav>This is your Navbar</nav>
+    {% block content %}{% endblock %}
+  </body>
+  ```
 
+## How to render elements within this layout?
+
+To render your elements within this layout, you just have to create your template (HTML file)
+
+- Go to your app level templates --> your_app_name --> Create a file here
+
+- Inside that file, on the very top, you need to inherit from the layout (basically extend your layout file)
+
+- add this line: ```{% extends 'layout.html' %}```. Now how does my project knows where is this layout file?? The answer is django will check each and every templates folder and find layout.html and once it finds it, it will extend it in the template file
+
+- Now, if you remember, we had two unnamed blocks in our layout file, one was title and other was content. What you need to do is, go ahead and add those two unnamed blocks here as well
+
+```html
+{% extends 'layout.html' %}
+
+{% block title %}
+My app title
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to my app</h1>
+{% endblock %}
+```
+
+- You are good to go.
