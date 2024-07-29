@@ -13,3 +13,48 @@ A project can have multiple apps running in it. You can create a new app by simp
 - scroll down to include languages and add django-html and html in the corresponding input boxes. That's it, you will be getting the suggestions now.
 
 - Now, all you need to do is to go to your project folder, and open settings.py file. Go to the key that says Applications and at last, add your app
+
+
+## How to connect your app to the main project
+
+Connecting your app to the project is definitely not going to be a nightmare for you if you follow the steps given below carefully
+
+- All you need to get started with is a urls.py file at your app level. This urls file will have all your routes. For the start, you can copy the contents from urls.py file in project folder.
+
+- Now, go ahead and remove all the unnecessary paths from the file and just keep the root path that is path("", views.myapp, name="whatever")
+
+- This is the time to connect your app urls to the project.
+
+- In the ```urls.py``` file of the project, import include from django.urls
+
+- Add another path that says ```path('chai\', include('your_app.urls'))``` Now you might be thinking how does the project knows about your app
+
+- This is where settings.py comes into play, open ```settings.py``` file and scroll down to ```INSTALLED_APPS``` and add the name of your project at the very end.
+
+### urls.py file at project level
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name="home"),
+    path('about/', views.about, name="about"),
+    path('contact/', views.contact, name="contact"),
+    path('chai/', include('myapp.urls')),
+]
+```
+
+### urls.py file at app level
+```python
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.allChai, name="all-chai"),
+
+]
+```
