@@ -125,3 +125,25 @@ By now, you would have successfully installed and configured Tailwind CSS in you
   ```
 
 ### You can now use Tailwind CSS classes in your templates.
+
+#
+# How to access Django Admin Panel?
+You might be thinking, Django boasts of a full-fledged admin panel, but where is it?? How can I actually use it to my advantage. Let's find out the answer to this together.
+
+- In your terminal run the following command to migrate all the dependencies
+  ```bash
+  python manage.py migrate
+  ```
+
+- Now, run the server using `python manage.py runserver`
+
+- Open your browser and head to `localhost:8000/admin`, you should now be able to see a login form. But wait, where are your login credentials??
+
+- In order to access it, you need to run another command in your terminal
+  ```bash
+  python manage.py createsuperuser
+  ```
+
+- Fill out the details and complete the setup. You need not to provide the email, simply skip it by pressing enter
+
+- Use the credentials you filled out in the terminal to access the admin panel on the browser and that's it!!!
