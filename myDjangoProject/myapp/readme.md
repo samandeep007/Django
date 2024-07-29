@@ -58,3 +58,26 @@ urlpatterns = [
 
 ]
 ```
+
+## Template engine in Django
+If you are coming from javascript, you might have worked with react where you can have a layout and all your children components are rendered within it. You can do the same in Django as well. 
+
+- Go to the templates folder at the root level and add layout.html file there.
+
+- Add the boilerplate code using ! and on the very top add ``` {% load static %} ```
+
+- Link your CSS using traditional link tag
+
+   ```html
+    <link rel='stylesheet' href="{% static 'style.css'%}">
+    ```
+- You might want each page to have its own title, so what you can do is, add a unnamed block inside your title tag.
+
+   ```html
+    <title>
+        {% block title %}
+        Here you can give a default value if you want
+        {% endblock %}
+    </title>
+    ```
+
